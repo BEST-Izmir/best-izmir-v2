@@ -18,12 +18,12 @@ const Hero = ({ titleId, contentId, image, link, buttonTextId, showLogo = false 
 
   return (
     <div className={styles.hero}>
-      <Image src={image} layout="fill" placeholder="blur" />
+      <Image src={image} layout="fill" placeholder="blur" alt={t(titleId)} />
       <div className={styles.backdrop} />
       <div className={styles.content}>
         {showLogo && <Logo width={225} height={125} isDark />}
-        <div className={styles.hero_title}>{t(titleId)}</div>
-        {contentId && <div className={styles.hero_content}>{t(contentId)}</div>}
+        <h1 className={styles.hero_title}>{t(titleId)}</h1>
+        {contentId && <p className={styles.hero_content}>{t(contentId)}</p>}
         {buttonTextId && (
           <a href={link} className={styles.hero_button}>
             {t(buttonTextId)}
